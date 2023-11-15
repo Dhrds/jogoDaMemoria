@@ -1,0 +1,78 @@
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2fb2821a-1406-4a1d-9b04-6668f278e944/d843okx-eb13e8e4-0fa4-4fa9-968a-e0f36ff168de.png/v1/fit/w_800,h_480,q_70,strp/pokemon_x_and_y_battle_background_11_by_phoenixoflight92_d843okx-414w-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NDgwIiwicGF0aCI6IlwvZlwvMmZiMjgyMWEtMTQwNi00YTFkLTliMDQtNjY2OGYyNzhlOTQ0XC9kODQzb2t4LWViMTNlOGU0LTBmYTQtNGZhOS05NjhhLWUwZjM2ZmYxNjhkZS5wbmciLCJ3aWR0aCI6Ijw9ODAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.m5eG5d4O5_xTOZAmNu5BcPF8rs01F7Pp4y2g2R14kOE');
+  background-size: cover;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 20px 50px;
+}
+
+header {
+  display: inherit;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0);
+  width: 0;
+  height: 0;
+  max-width: 800px;
+  padding: 0px;
+  margin: 0 0 0px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 15px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  aspect-ratio: 3/4;
+  width: 100%;
+  border-radius: 5px;
+  position: relative;
+  transition: all 400ms ease;
+  transform-style: preserve-3d;
+  background-color: #ccc;
+}
+
+.face {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  border: 5px solid #00b5cc;
+  border-radius: 5px;
+  transition: all 400ms ease;
+}
+
+.front {
+  transform: rotateY(180deg);
+}
+
+.back {
+  background-image: url('https://lbmslab.org/lab/wp-content/uploads/2017/02/822be1519b67a0f657dbfeae47eba30b-1.png');
+  backface-visibility: hidden;
+}
+
+.reveal-card {
+  transform: rotateY(180deg);
+}
+
+.disabled-card {
+  filter: saturate(0);
+  opacity: 0.5;
+}
+
+@media screen and (max-width:920px) {
+  .grid {
+    grid-template-columns: repeat(5, 1fr);
+
+  }
+}
