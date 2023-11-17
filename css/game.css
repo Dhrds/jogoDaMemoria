@@ -2,7 +2,7 @@ main {
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2fb2821a-1406-4a1d-9b04-6668f278e944/d843okx-eb13e8e4-0fa4-4fa9-968a-e0f36ff168de.png/v1/fit/w_800,h_480,q_70,strp/pokemon_x_and_y_battle_background_11_by_phoenixoflight92_d843okx-414w-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NDgwIiwicGF0aCI6IlwvZlwvMmZiMjgyMWEtMTQwNi00YTFkLTliMDQtNjY2OGYyNzhlOTQ0XC9kODQzb2t4LWViMTNlOGU0LTBmYTQtNGZhOS05NjhhLWUwZjM2ZmYxNjhkZS5wbmciLCJ3aWR0aCI6Ijw9ODAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.m5eG5d4O5_xTOZAmNu5BcPF8rs01F7Pp4y2g2R14kOE');
+  background-image: url('../img/2.jpg');
   background-size: cover;
   min-height: 100vh;
   align-items: center;
@@ -57,7 +57,8 @@ header {
 }
 
 .back {
-  background-image: url('https://lbmslab.org/lab/wp-content/uploads/2017/02/822be1519b67a0f657dbfeae47eba30b-1.png');
+  background-image: url('../img/1.jpg');
+  background-size: cover;
   backface-visibility: hidden;
 }
 

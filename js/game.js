@@ -1,18 +1,18 @@
 const grid = document.querySelector('.grid');
-const spanPlayer = document.querySelector('.player');
-const timer = document.querySelector('.timer');
 
 const characters = [
-  'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/91.png',
-  'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/30.png',
-  'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/24.png',
-  'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/17.png',
-  'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/13.png',
-  'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/22.png',
-  'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/9.png',
-  'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/53.png',
-  'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/7.png',
-  'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/1.png'
+  'img/ariel.png',
+  'img/bela.png',
+  'img/branca-de-neve.png',
+  'img/download.jpeg',
+  'img/patrulha.png',
+  'img/frozen.jpg',
+  'img/Jasmine.png',
+  'img/Princess_Pocahontas.png',
+  'img/unicornio.webp',
+  // 'img/wall.jpg',
+  'img/Brinquedo.webp',
+  
   ];
 
 const createElement = (tag, className) => {
@@ -113,6 +113,5 @@ const loadGame = () => {
 
 
 window.onload = () => {
-  spanPlayer.innerHTML = localStorage.getItem('player');
   loadGame();
 }
