@@ -21,40 +21,45 @@ const createElement = (tag, className) => {
   return element;
 }
 
-let firstCard = '';
-let secondCard = '';
+let primeiraEscolha = '';
+let segundaEscolha = '';
+
+
 
 const checkEndGame = () => {
   const disabledCards = document.querySelectorAll('.disabled-card');
 
   if (disabledCards.length === 20) {
     clearInterval(this.loop);
-    alert('Parabéns');
+    setTimeout(() => {
+      alert('Parabéns!');
+    }, 500);
+    loadGame();
   }
-}
+};
 
 const checkCards = () => {
-  const firstCharacter = firstCard.getAttribute('data-character');
-  const secondCharacter = secondCard.getAttribute('data-character');
+  const firstCharacter = primeiraEscolha.getAttribute('data-character');
+  const secondCharacter = segundaEscolha.getAttribute('data-character');
 
   if (firstCharacter === secondCharacter) {
 
-    firstCard.firstChild.classList.add('disabled-card');
-    secondCard.firstChild.classList.add('disabled-card');
+    primeiraEscolha.firstChild.classList.add('disabled-card');
+    segundaEscolha.firstChild.classList.add('disabled-card');
 
-    firstCard = '';
-    secondCard = '';
+    primeiraEscolha = '';
+    segundaEscolha = '';
 
     checkEndGame();
 
   } else {
     setTimeout(() => {
 
-      firstCard.classList.remove('reveal-card');
-      secondCard.classList.remove('reveal-card');
+      primeiraEscolha.classList.remove('reveal-card');
+      segundaEscolha.classList.remove('reveal-card');
 
-      firstCard = '';
-      secondCard = '';
+      primeiraEscolha = '';
+      segundaEscolha = '';
 
     }, 500);
   }
@@ -62,25 +67,19 @@ const checkCards = () => {
 }
 
 const revealCard = ({ target }) => {
+  const card = target.parentNode;
 
-  if (target.parentNode.className.includes('reveal-card')) {
-    return;
+  if (!card.classList.contains('reveal-card') && segundaEscolha === '') {
+    card.classList.add('reveal-card');
+
+    if (primeiraEscolha === '') {
+      primeiraEscolha = card;
+    } else {
+      segundaEscolha = card;
+      checkCards();
+    }
   }
-
-  if (firstCard === '') {
-
-    target.parentNode.classList.add('reveal-card');
-    firstCard = target.parentNode;
-
-  } else if (secondCard === '') {
-
-    target.parentNode.classList.add('reveal-card');
-    secondCard = target.parentNode;
-
-    checkCards();
-
-  }
-}
+};
 
 const createCard = (character) => {
 
@@ -100,18 +99,23 @@ const createCard = (character) => {
 }
 
 const loadGame = () => {
+  grid.innerHTML = '';
+
   const duplicateCharacters = [...characters, ...characters];
 
   const shuffledArray = duplicateCharacters.sort(() => Math.random() - 0.5);
 
-  shuffledArray.forEach((character) => {
+  shuffledArray.forEach((character, index) => {
     const card = createCard(character);
+
     grid.appendChild(card);
   });
-}
+};
+
+
 
 
 
 window.onload = () => {
-  loadGame();
+loadGame();
 }
